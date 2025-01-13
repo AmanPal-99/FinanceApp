@@ -80,7 +80,7 @@ body {
     display: none;
   }
   
-  /* Global body styles */
+
   body {
     @apply bg-background text-foreground;
   }

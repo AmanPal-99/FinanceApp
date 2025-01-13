@@ -8,7 +8,7 @@ import BudgetItem from '../../budgets/_components/BudgetItem'
 import { use } from 'react'
 import AddExpenses from '../AddExpenses/page'
 import ExpenseListTable from '../_components/ExpenseListTable'
-import { Button } from '@/components/ui/Button'
+
 import { TrashIcon } from 'lucide-react'
 import {
     AlertDialog,
@@ -24,6 +24,7 @@ import {
 import { toast } from 'sonner'
 import { useRouter } from 'next/navigation'
 import Editbudget from '../_components/Editbudget'
+import { Button } from '@/components/ui/Button'
   
 
 function ExpensesScreen({params}) {
