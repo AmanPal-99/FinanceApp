@@ -18,7 +18,7 @@ function SideNav() {
             id:2,
             name:'Budgets',
             icon:PiggyBank,
-            path:'/dashboard/budget'
+            path:'/dashboard/budgets'
 
         },
         {
@@ -39,10 +39,12 @@ function SideNav() {
 
     return (
         <div className='h-screen p-5 border-r-2 border-slate-300 shadow-sm'>
+
             <Image src={'/logo.svg'}
                 alt='logo'
                 width={160}
                 height={100}
+                
             />
 
             <div className='mt-5'>
