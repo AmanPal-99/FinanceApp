@@ -35,7 +35,7 @@ function Expense() {
     <div className='p-5'>
         
         <div className='font-bold text-3xl '>My Expenses</div>
-        <ExpenseListTable expensesList={expensesList} refreshData={()=>getBudgetList()} />
+        <ExpenseListTable expensesList={expensesList} refreshData={()=>getAllExpenses()} />
     </div>
    
   )
