@@ -6,6 +6,7 @@ import { UserButton } from '@clerk/nextjs'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
+
 function SideNav() {
     const menuList=[
         {
@@ -23,7 +24,7 @@ function SideNav() {
         },
         {
             id:3,
-            name:'Expenses',
+            name:'All Expenses',
             icon:ReceiptText,
             path:'/dashboard/expense'
         },
@@ -39,13 +40,15 @@ function SideNav() {
 
     return (
         <div className='h-screen p-5 border-r-2 border-slate-300 shadow-sm'>
-
-            <Image src={'/logo.svg'}
-                alt='logo'
-                width={160}
-                height={100}
-                
-            />
+            
+            <Link href='/'>
+                <Image src={'/logo.svg'}
+                    alt='logo'
+                    width={160}
+                    height={100}
+                />
+            </Link>
+           
 
             <div className='mt-5'>
                 {menuList.map((menu)=>(
@@ -53,7 +56,8 @@ function SideNav() {
                         <h2 
                             className={`flex gap-2 items-center
                             text-gray-900 font-medium mb-2 p-3 cursor-pointer 
-                            rounded-md hover:text-primary hover:bg-blue-200 ${path==menu.path&&'text-primary bg-blue-200'}`}>
+                            rounded-md hover:text-primary hover:bg-blue-200 ${path==menu.path &&'text-primary bg-blue-200'}
+                            `}>
                                 <menu.icon />
                                 {menu.name}
                         </h2>

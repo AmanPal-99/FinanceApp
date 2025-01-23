@@ -4,7 +4,10 @@ import React from 'react'
 function BudgetItem({budgets}) {
 
     const calculatorProgress = (()=>{
-        const percent =(budgets?.totalSpend/budgets?.amount)*100;
+        let percent =(budgets?.totalSpend/budgets?.amount)*100;
+        if(percent>100){
+            percent=100;
+        }
         return percent.toFixed(2);
     })
 

@@ -12,6 +12,18 @@ function AddExpenses({budgetId,refreshData}) {
     const [name, setName] = useState('');
     const [amount, setAmount] = useState('');
 
+    const toastFunction = async()=>{
+        const result = await refreshData();
+        if(result){
+            if(budgets?.totalSpend>budgets?.amount){
+                toast('New Expense Added! You Clearly Overspent')
+            }else{
+                toast('New Expense Added!')
+            }
+        }
+        
+    };
+
     const addNewExpense=(async()=>{
         const result = await db.insert(Expenses).values({
             name:name,
@@ -25,7 +37,7 @@ function AddExpenses({budgetId,refreshData}) {
 
         if(result){
             refreshData();
-            toast('New Expense Added!')
+            toastFunction();
         }
     })
 

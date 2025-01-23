@@ -19,9 +19,9 @@ function ExpenseListTable({expensesList,refreshData}) {
     })
 
   return (
-    <div className='mt-3  shadow-md  '> 
+    <div className='mt-3  shadow-md max-h-[400px]  '> 
         <h2 className='font-bold text-lg '>Latest Expenses</h2>
-        <div className='rounded-md border-2 border-primary overflow-hidden'>
+        <div className='rounded-md border-2 border-primary shadow-md max-h-[262px] overflow-y-auto scroll-smooth scrollbar-hidden '>
             <div className='grid grid-cols-4 bg-[#c3c2fe] p-2 '>
                 <h2 className='font-bold'>Name</h2>
                 <h2 className='font-bold'>Amount</h2>

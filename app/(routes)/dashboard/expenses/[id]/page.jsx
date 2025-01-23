@@ -89,7 +89,7 @@ function ExpensesScreen({params}) {
 
         return (
             <div className='p-5'>
-                <h2 className='text-2xl font-bold flex justify-between items-center'>My Expenses
+                <h2 className='text-2xl font-bold flex justify-between items-center'>Budget Expenses
                     <span className='flex gap-2 items-center'>
                         <div className='flex gap-2 items-center'>
                             <Editbudget budgetInfo={budgetInfo} refreshData={()=>getBudgetInfo()} />
@@ -125,7 +125,7 @@ function ExpensesScreen({params}) {
                                     ></div>
                                 )
                     }
-                    <AddExpenses budgetId={unwrappedParams?.id} user={user} refreshData={()=>getBudgetInfo()} />
+                    <AddExpenses  budgetId={unwrappedParams?.id} user={user} refreshData={()=>getBudgetInfo()} />
                 </div>
                 <div className='mt-4'>
                     <ExpenseListTable expensesList={expensesList}

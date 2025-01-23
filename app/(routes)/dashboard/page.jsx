@@ -76,7 +76,7 @@ function Dashboard() {
                 </div>
                 <div >
                     <h2 className='font-bold text-lg '>Latest Budgets</h2>
-                    <div className=' grid gap-2 max-h-[586px] overflow-y-auto scroll-smooth scrollbar-hidden' >
+                    <div className=' grid gap-2 max-h-[650px] overflow-y-auto scroll-smooth scrollbar-hidden' >
                         {budgetList.map((budget,index)=>(
                             <BudgetItem budgets={budget} key={index} />
                         ))}
