@@ -7,24 +7,14 @@ import { db } from '@/utils/dbConfig';
 import { Expenses } from '@/utils/schema';
 import moment from 'moment/moment';
 
-function AddExpenses({budgetId,refreshData}) {
+function AddExpenses({budgets,budgetId,refreshData}) {
 
     const [name, setName] = useState('');
     const [amount, setAmount] = useState('');
 
-    const toastFunction = async()=>{
-        const result = await refreshData();
-        if(result){
-            if(budgets?.totalSpend>budgets?.amount){
-                toast('New Expense Added! You Clearly Overspent')
-            }else{
-                toast('New Expense Added!')
-            }
-        }
-        
-    };
+ 
 
-    const addNewExpense=(async()=>{
+    const addNewExpense=async()=>{
         const result = await db.insert(Expenses).values({
             name:name,
             amount:amount,
@@ -35,11 +25,18 @@ function AddExpenses({budgetId,refreshData}) {
         setAmount('');
         setName('');
 
+       
+
         if(result){
+            if(budgets?.totalSpend + amount > budgets?.amount){
+                toast('New Expense Added! You Clearly Overspent!!')
+            }else{
+                toast('New Expense Added!')
+            }
             refreshData();
-            toastFunction();
         }
-    })
+    }
+    
 
     return (
         <div className='border-2 border-primary p-5 rounded-lg'>
@@ -65,7 +62,7 @@ function AddExpenses({budgetId,refreshData}) {
             </div>
             <Button
                 disabled={!(name && amount)}
-                onClick={async()=> await addNewExpense()}
+                onClick={addNewExpense}
                 className='mt-3 w-full'>
                 Add New Expense
             </Button>

@@ -125,7 +125,7 @@ function ExpensesScreen({params}) {
                                     ></div>
                                 )
                     }
-                    <AddExpenses  budgetId={unwrappedParams?.id} user={user} refreshData={()=>getBudgetInfo()} />
+                    <AddExpenses  budgets={budgetInfo} budgetId={unwrappedParams?.id} user={user} refreshData={()=>getBudgetInfo()} />
                 </div>
                 <div className='mt-4'>
                     <ExpenseListTable expensesList={expensesList}
