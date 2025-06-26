@@ -2,7 +2,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { LayoutGrid, PiggyBank, ReceiptText, ShieldCheck } from 'lucide-react'
-import { UserButton } from '@clerk/nextjs'
+
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
@@ -65,10 +65,7 @@ function SideNav() {
                 ))}
             </div>
 
-            <div className='fixed bottom-10 p-5 flex gap-2 items-center'>
-                <UserButton />
-                Profile
-            </div>
+          
 
         </div>
     )

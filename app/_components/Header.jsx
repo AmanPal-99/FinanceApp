@@ -9,7 +9,7 @@ function Header() {
 
     const {user , isSignedIn} = useUser();
     return (
-        <div className='p-5 flex justify-between items-center border shadow'>
+        <div className='p-5 flex justify-between items-center shadow-lg border-2 border-[#eeebff] bg-[#eeebff]'>
             <Image src={'./logo.svg'}
                 alt='logo'
                 width={160}

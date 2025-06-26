@@ -20,7 +20,7 @@ function BudgetList() {
     }, [user]);
 
     const getBudgetList = async () => {
-        setLoading(true); // Start loading
+        setLoading(true); 
         try {
             const result = await db.select({
                 ...getTableColumns(Budgets),
@@ -36,7 +36,7 @@ function BudgetList() {
         } catch (error) {
             console.error('Error fetching budgets:', error);
         } finally {
-            setLoading(false); // Stop loading
+            setLoading(false); 
         }
     };
 
