@@ -16,10 +16,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider
-      afterSignInUrl="/dashboard"
-      afterSignUpUrl="/dashboard"
-    >
+    <ClerkProvider>
       <html lang="en">
         <body className={outfit.className} suppressHydrationWarning>
           <Toaster />

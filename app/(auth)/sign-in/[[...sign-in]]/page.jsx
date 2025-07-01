@@ -9,14 +9,14 @@ export default function Page() {
         <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
           <img
             alt="Finance"
-            src="https://wallpaperboat.com/wp-content/uploads/2021/04/15/75170/finance-04-920x518.jpg"
-            className="absolute inset-0 h-full w-full object-cover opacity-80"
+            src="\finance-for-non-finance-course.jpeg"
+            className="absolute inset-0 h-full w-full object-cover opacity-50"
           />
-          <div className="hidden lg:relative lg:block lg:p-12 z-10">
+          <div className="hidden lg:relative ml-3 lg:block lg:p-12 z-10">
             <h2 className="text-3xl font-bold text-white sm:text-4xl">
               Welcome to Expense Tracker
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-white/90">
+            <p className="mt-4 text-lg leading-relaxed text-white">
               Organize your expenses, visualize your budget, and grow your savings with ease.
             </p>
           </div>
@@ -39,7 +39,6 @@ export default function Page() {
             {/* Clerk Sign In */}
             <div className="flex justify-center">
               <div style={{ transform: 'scale(1.1)', transformOrigin: 'center' }}>
-                <SignIn afterSignInUrl="/dashboard" />
               </div>
             </div>
 
