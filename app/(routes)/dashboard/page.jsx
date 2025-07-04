@@ -35,14 +35,12 @@ function Dashboard() {
                 .rightJoin(Expenses,eq(Budgets.id,Expenses.budgetId))
                 .where(eq(Budgets.createdBy,user?.primaryEmailAddress.emailAddress))
                 .orderBy(desc(Expenses.id));
-
                 setExpensesList(result);
-                
     }   
     
 
     const getBudgetList = async () => {
-           setLoading(true); // Start loading
+           setLoading(true); 
            try {
                const result = await db.select({
                    ...getTableColumns(Budgets),
